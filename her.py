@@ -10,15 +10,9 @@ def main(argv):
         x = line.split()
         if x[0] == "[NN]" or x[0] == "[NNP]":
             d.setdefault(x[2], x[4])
-    #print(d)
-    print(len(d))
-    phrase = sys.argv[2]
-    phrase1 = phrase.split()
-    for x in phrase1:
-        for key, value in d.iteritems():
-            if x == key:
-                print(value)
-    #print(paraphrase)
-
+        else:
+            pass
+    newphrase = [d.get(w) if w in d else w for w in sys.argv[2].lower().split()]
+    print(" ".join(w.capitalize() for w in newphrase))
 if __name__ == "__main__":
     main(sys.argv)
