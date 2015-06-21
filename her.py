@@ -12,11 +12,13 @@ def main(argv):
             d.setdefault(x[2], x[4])
     #print(d)
     print(len(d))
-    frase = sys.argv[2]
-    frase1 = frase.split()
-    for word in frase1:
-        if word in d:
-            word = d.values()
-    print(frase1)
+    phrase = sys.argv[2]
+    phrase1 = phrase.split()
+    for x in phrase1:
+        for key, value in d.iteritems():
+            if x == key:
+                print(value)
+    #print(paraphrase)
 
-main(sys)
+if __name__ == "__main__":
+    main(sys.argv)
